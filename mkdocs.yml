@@ -1,8 +1,8 @@
-site_name: OpenAI API Documentation CKG
-site_description: Source-linked graph context for OpenAI API development.
-site_url: https://yarmoluk.github.io/ckg-openai-api-docs/
-repo_url: https://github.com/Yarmoluk/ckg-openai-api-docs
-repo_name: Yarmoluk/ckg-openai-api-docs
+site_name: Astra Developer Reference CKG
+site_description: "Astra Developer Reference CKG: source-linked context for building with Astra and OpenAI APIs."
+site_url: https://yarmoluk.github.io/astra-developer-reference-ckg/
+repo_url: https://github.com/Yarmoluk/astra-developer-reference-ckg
+repo_name: Yarmoluk/astra-developer-reference-ckg
 use_directory_urls: false
 theme:
   name: material

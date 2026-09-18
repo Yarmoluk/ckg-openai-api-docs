@@ -5,8 +5,8 @@
 Python 3.10 or later. Graph lookup, validation and evaluation replay use only the standard library.
 
 ```bash
-git clone https://github.com/Yarmoluk/ckg-openai-api-docs.git
-cd ckg-openai-api-docs
+git clone https://github.com/Yarmoluk/astra-developer-reference-ckg.git
+cd astra-developer-reference-ckg
 python3 scripts/query.py "Astra none reasoning"
 ```
 

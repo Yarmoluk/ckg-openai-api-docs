@@ -1,14 +1,14 @@
-# OpenAI API Documentation CKG
+# Astra Developer Reference CKG
 
-[![Validate](https://github.com/Yarmoluk/ckg-openai-api-docs/actions/workflows/validate.yml/badge.svg)](https://github.com/Yarmoluk/ckg-openai-api-docs/actions/workflows/validate.yml)
-[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-087f72)](https://yarmoluk.github.io/ckg-openai-api-docs/)
+[![Validate](https://github.com/Yarmoluk/astra-developer-reference-ckg/actions/workflows/validate.yml/badge.svg)](https://github.com/Yarmoluk/astra-developer-reference-ckg/actions/workflows/validate.yml)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-087f72)](https://yarmoluk.github.io/astra-developer-reference-ckg/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)](https://www.python.org/)
 
 **Source-linked context for agents building with OpenAI's APIs.** Search model constraints, tool contracts and request schemas, then follow each result back to the official documentation.
 
 ![Astra as a reference point in a constellation of documentation](docs/assets/images/astra-documentation-header.png)
 
-**[Start with the Astra reference →](https://yarmoluk.github.io/ckg-openai-api-docs/astra.html)** Follow the model's documented connections to Responses, async tools, steering, reasoning and conversation state. The documentation includes a visual map generated from five exact graph relationships and a worked question-to-source example.
+**[Start with the Astra reference →](https://yarmoluk.github.io/astra-developer-reference-ckg/astra.html)** Follow the model's documented connections to Responses, async tools, steering, reasoning and conversation state. The documentation includes a visual map generated from five exact graph relationships and a worked question-to-source example.
 
 This independent research preview organizes **541 indexed documentation entries into 2,889 nodes and 4,731 declared relationships**. It runs locally with Python's standard library: no API key, hosted service or embedding database.
 
@@ -26,8 +26,8 @@ This independent research preview organizes **541 indexed documentation entries 
 ## Run it
 
 ```bash
-git clone https://github.com/Yarmoluk/ckg-openai-api-docs.git
-cd ckg-openai-api-docs
+git clone https://github.com/Yarmoluk/astra-developer-reference-ckg.git
+cd astra-developer-reference-ckg
 python3 scripts/query.py "Astra function calling Chat Completions" --limit 3
 python3 scripts/query.py "configuration_update compaction"
 python3 scripts/query.py "create organization group name constraints"
@@ -52,7 +52,7 @@ Navigation and section membership use RELATES_TO. Only two documented requiremen
 
 ## Explore
 
-- [Documentation site](https://yarmoluk.github.io/ckg-openai-api-docs/) — architecture, quickstart, evaluation and provenance.
+- [Documentation site](https://yarmoluk.github.io/astra-developer-reference-ckg/) — architecture, quickstart, evaluation and provenance.
 - [Readable CKG](data/ckg-openai-api-docs.md), [JSON](data/graph.json), [CSV](data/graph.csv).
 - [Source inventory](data/sources.json) — original indexed URLs and resolved evidence URLs.
 - [Twenty practical questions](evals/questions.json) and [author-reviewed answers](evals/answers.json).

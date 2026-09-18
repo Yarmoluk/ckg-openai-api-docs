@@ -2,7 +2,7 @@
 <img class="hero-art" src="assets/images/astra-documentation-header.png" alt="" width="2048" height="683" fetchpriority="high">
 <div class="hero-content">
 <p class="eyebrow">Graphify.md · community documentation</p>
-<h1>Build with Astra.<br>Understand the API around it.</h1>
+<h1>Astra Developer<br>Reference CKG</h1>
 <p class="lede">A source-linked guide to the model, its tools, and the conversation state your application manages.</p>
 <div class="hero-actions">
 <a class="md-button md-button--primary" href="astra.html">Start with the Astra reference</a>
