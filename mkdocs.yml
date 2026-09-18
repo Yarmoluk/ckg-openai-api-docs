@@ -1,0 +1,34 @@
+site_name: OpenAI API Documentation CKG
+site_description: Source-linked graph context for OpenAI API development.
+site_url: https://yarmoluk.github.io/ckg-openai-api-docs/
+repo_url: https://github.com/Yarmoluk/ckg-openai-api-docs
+repo_name: Yarmoluk/ckg-openai-api-docs
+use_directory_urls: false
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: teal
+    accent: teal
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+nav:
+  - Overview: index.md
+  - Architecture: architecture.md
+  - Run it: quickstart.md
+  - Evaluation: evaluation.md
+  - Provenance & maintenance: provenance.md

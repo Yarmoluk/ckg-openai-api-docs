@@ -1,0 +1,228 @@
+{
+  "method": "Manually authored answers and agent source review, using frozen top-five graph results. No additional model API was invoked. This is a diagnostic audit, not a blinded or independent answer benchmark.",
+  "candidate": [
+    {
+      "case_id": "Q01",
+      "answer": "No. GPT-6 Astra does not support none reasoning effort; sending it returns HTTP 400.",
+      "citations": [
+        "ASTRA-NONE"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q02",
+      "answer": "Move function calling to the Responses API. Astra can generate through Chat Completions, but Chat Completions does not support Astra function calling.",
+      "citations": [
+        "ASTRA-TOOLS"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q03",
+      "answer": "Remove temperature, top_p and top_logprobs. In Chat Completions also remove logprobs; in Responses remove message.output_text.logprobs from include.",
+      "citations": [
+        "ASTRA-PARAMETERS"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q04",
+      "answer": "300,000 input tokens exceeds the 272K threshold. The documented multipliers are 2x the input and cache rates and 1.5x the output rate for the full request.",
+      "citations": [
+        "OAI-67b4ce9b4e6a-S06a01cd8"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q05",
+      "answer": "No. Astra with EU data residency supports neither service_tier fast nor priority; use Standard processing.",
+      "citations": [
+        "ASTRA-FAST-EU"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q06",
+      "answer": "No. Your application executes the function/custom tool and manages its background jobs. async:true lets the model continue while that tool runs. Background mode instead makes response generation asynchronous.",
+      "citations": [
+        "ASYNC-APP",
+        "OAI-065081c54a27-S73fc1db4"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q07",
+      "answer": "Use the original API call_id. Return function_call_output for a function_call, or custom_tool_call_output for a custom_tool_call.",
+      "citations": [
+        "ASYNC-ID"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q08",
+      "answer": "Async execution applies to application-run function/custom tools, not hosted built-ins or programmatic tool calling. In Multi-agent mode, do not combine async tools with parallel tool calls.",
+      "citations": [
+        "ASYNC-COMPAT"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q09",
+      "answer": "Use a WebSocket connection to the Responses API for Astra mid-turn steering. Steering cannot undo previous actions or cancel tools already started.",
+      "citations": [
+        "OAI-e57f58a1c503",
+        "STEER-EFFECT"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q10",
+      "answer": "No. response.steer.accepted means the input is queued, not that the model acted on it. Continuation can still require tool results or approval.",
+      "citations": [
+        "STEER-ACK"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q11",
+      "answer": "Append configuration_update between responses and leave the request-level reasoning.effort unchanged. This preserves the original prompt prefix for caching.",
+      "citations": [
+        "REASON-UPDATE"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q12",
+      "answer": "Do not combine configuration_update with automatic compaction or automatic truncation. Standalone /responses/compact rejects histories containing these updates. Explicit compaction_trigger remains available; add a fresh configuration_update before the next user message afterward.",
+      "citations": [
+        "REASON-UPDATE-LIMITS"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q13",
+      "answer": "No. In stateless mode, including store=false or ZDR, reasoning items include encrypted_content by default. The legacy reasoning.encrypted_content include value remains accepted but is not required.",
+      "citations": [
+        "REASON-STATELESS"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q14",
+      "answer": "No. Pass the complete returned compacted context window into the next Responses call. It can include retained items besides the encrypted compaction item; do not prune it.",
+      "citations": [
+        "OAI-5677dd8d3239-S92ae9d3b"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q15",
+      "answer": "Compaction replaces earlier context and can change the cached prefix. The first request afterward may reuse less cache even if the conversation's meaning is unchanged.",
+      "citations": [
+        "CACHE-COMPACT"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q16",
+      "answer": "No. ZDR background requests use store=false but temporarily retain response data on disk for roughly ten minutes to support asynchronous execution and polling.",
+      "citations": [
+        "BACKGROUND-RETENTION"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q17",
+      "answer": "Astra's documented output modality is text, and its maximum output is 128,000 tokens. Its own output modality does not include images.",
+      "citations": [
+        "OAI-67b4ce9b4e6a-S83dcc9df"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q18",
+      "answer": "Use POST /organization/groups with a required string name, minimum length 1 and maximum length 255.",
+      "citations": [
+        "OAI-7f3746005730",
+        "OAI-7f3746005730-R3f101141"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q19",
+      "answer": "Use GET /organization/admin_api_keys. The optional after cursor returns IDs after the given ID; limit is an optional maximum count; order accepts asc or desc by creation time.",
+      "citations": [
+        "OAI-bdd067eaac99",
+        "OAI-bdd067eaac99-Rb553f232"
+      ],
+      "status": "complete",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    },
+    {
+      "case_id": "Q20",
+      "answer": "The retrieved Astra documentation does not establish an exact retirement date. I cannot supply one from this evidence.",
+      "citations": [
+        "OAI-67b4ce9b4e6a"
+      ],
+      "status": "correct_abstention",
+      "reviewer": "same-session Codex agent; not independently human-scored"
+    }
+  ],
+  "baseline_overrides": [
+    {
+      "case_id": "Q07",
+      "answer": "Return the result using the original API call_id. The retrieved graph facts do not specify the function/custom output-item types.",
+      "citations": [
+        "ASYNC-ID"
+      ],
+      "status": "partial",
+      "missing_facts": [
+        "function_call_output and custom_tool_call_output"
+      ]
+    },
+    {
+      "case_id": "Q18",
+      "answer": "The retrieved graph contains a placeholder for creating organization groups; it does not establish the endpoint or required name constraints.",
+      "citations": [
+        "OAI-7f3746005730"
+      ],
+      "status": "insufficient_evidence",
+      "missing_facts": [
+        "endpoint",
+        "required name type and length bounds"
+      ]
+    },
+    {
+      "case_id": "Q19",
+      "answer": "The retrieved graph contains placeholders for admin API keys; it does not establish pagination or ordering parameters.",
+      "citations": [
+        "OAI-bdd067eaac99"
+      ],
+      "status": "insufficient_evidence",
+      "missing_facts": [
+        "endpoint",
+        "after cursor",
+        "limit",
+        "order"
+      ]
+    }
+  ]
+}

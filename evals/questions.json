@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-18T16:00:14.302Z",
+  "scope": "20 manually curated practical tasks; not held-out, blinded or independent human benchmark",
+  "rubric": {
+    "complete": "All required facts stated and supported by cited retrieved evidence, with no material contradiction.",
+    "partial": "Some required facts absent but no unsupported material claim.",
+    "unsupported": "Any material assertion not entailed by cited retrieved evidence.",
+    "abstain": "Correctly explain insufficient evidence for the requested fact."
+  },
+  "retrieval": {
+    "limit": 5,
+    "source": "graph facts",
+    "full_text_fallback": "reported separately; do not count as graph-only success"
+  },
+  "cases": [
+    {
+      "id": "Q01",
+      "question": "Can I send reasoning.effort=none to GPT-6 Astra? What happens?",
+      "required_facts": [
+        "none unsupported",
+        "HTTP 400"
+      ],
+      "source_ids": [
+        "0153"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q02",
+      "question": "Can I keep Chat Completions when moving an Astra app that uses function calling?",
+      "required_facts": [
+        "Chat Completions function calling unsupported for Astra",
+        "use Responses"
+      ],
+      "source_ids": [
+        "0153"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q03",
+      "question": "Which sampling and logprob parameters must I remove when migrating to Astra?",
+      "required_facts": [
+        "temperature top_p top_logprobs",
+        "Chat Completions logprobs",
+        "Responses message.output_text.logprobs include"
+      ],
+      "source_ids": [
+        "0199"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q04",
+      "question": "How is a 300,000-input-token Astra request priced relative to standard short requests?",
+      "required_facts": [
+        "greater than 272K threshold",
+        "2x input and cache rates",
+        "1.5x output for full request"
+      ],
+      "source_ids": [
+        "MODEL_ASTRA"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q05",
+      "question": "Can I use Astra fast or priority processing with EU data residency?",
+      "required_facts": [
+        "neither fast nor priority for EU Astra",
+        "use Standard"
+      ],
+      "source_ids": [
+        "0199"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q06",
+      "question": "Does async:true make OpenAI execute my function or manage my background jobs?",
+      "required_facts": [
+        "application executes function/custom tool",
+        "application owns background jobs",
+        "distinct from background response generation"
+      ],
+      "source_ids": [
+        "0027"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q07",
+      "question": "How do I correlate an async tool result with its original call?",
+      "required_facts": [
+        "original call_id",
+        "appropriate function_call_output or custom_tool_call_output"
+      ],
+      "source_ids": [
+        "0027"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q08",
+      "question": "Can I use async tools with hosted tools, programmatic tool calling, and parallel Multi-agent calls?",
+      "required_facts": [
+        "application function/custom only",
+        "not hosted built-ins or programmatic tool calling",
+        "do not combine async and parallel calls in Multi-agent"
+      ],
+      "source_ids": [
+        "0027"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q09",
+      "question": "Can I steer Astra over HTTP and undo a tool that already started?",
+      "required_facts": [
+        "Responses WebSocket required",
+        "no undo or cancellation of started tools"
+      ],
+      "source_ids": [
+        "0109"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q10",
+      "question": "Does response.steer.accepted mean the model has already followed my new instruction?",
+      "required_facts": [
+        "queued not acted",
+        "continuation may wait on tool results or approval"
+      ],
+      "source_ids": [
+        "0109"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q11",
+      "question": "How do I change reasoning effort mid-conversation while preserving the cache prefix?",
+      "required_facts": [
+        "configuration_update between responses",
+        "leave request-level reasoning.effort unchanged"
+      ],
+      "source_ids": [
+        "0153"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q12",
+      "question": "Can configuration_update be combined with automatic compaction or standalone responses/compact?",
+      "required_facts": [
+        "no automatic compaction or truncation",
+        "standalone compact rejects update history",
+        "explicit compaction_trigger then fresh update"
+      ],
+      "source_ids": [
+        "0153"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q13",
+      "question": "With store=false, must I request include reasoning.encrypted_content to preserve reasoning?",
+      "required_facts": [
+        "encrypted_content default in stateless mode",
+        "legacy include accepted not required"
+      ],
+      "source_ids": [
+        "0153"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q14",
+      "question": "Can I retain only the encrypted compaction item returned by responses/compact?",
+      "required_facts": [
+        "keep complete returned context window",
+        "do not prune retained items"
+      ],
+      "source_ids": [
+        "0041"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q15",
+      "question": "Why might prompt-cache reuse drop immediately after compaction?",
+      "required_facts": [
+        "compaction changes prefix",
+        "first post-compaction request may reuse less cache"
+      ],
+      "source_ids": [
+        "0137"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q16",
+      "question": "Does a ZDR background response with store=false avoid all temporary response retention?",
+      "required_facts": [
+        "temporary disk retention roughly 10 minutes",
+        "store=false in ZDR background"
+      ],
+      "source_ids": [
+        "0030"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q17",
+      "question": "Can GPT-6 Astra itself output images, and what is its maximum output token limit?",
+      "required_facts": [
+        "text output only",
+        "128000 maximum output tokens"
+      ],
+      "source_ids": [
+        "MODEL_ASTRA"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q18",
+      "question": "What endpoint and required name constraints create an organization group?",
+      "required_facts": [
+        "POST /organization/groups",
+        "required string name",
+        "length 1 through 255"
+      ],
+      "source_ids": [
+        "RECOVERY_0323"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q19",
+      "question": "How do I paginate and order a list of organization admin API keys?",
+      "required_facts": [
+        "GET /organization/admin_api_keys",
+        "after optional cursor",
+        "limit optional number",
+        "order asc or desc"
+      ],
+      "source_ids": [
+        "RECOVERY_0319"
+      ],
+      "behavior": "answer"
+    },
+    {
+      "id": "Q20",
+      "question": "What is the exact retirement date of GPT-6 Astra?",
+      "required_facts": [
+        "state evidence does not establish a retirement date",
+        "do not invent a date or equate knowledge cutoff with retirement"
+      ],
+      "source_ids": [
+        "MODEL_ASTRA"
+      ],
+      "behavior": "abstain"
+    }
+  ]
+}

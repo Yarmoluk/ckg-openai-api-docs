@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+site/
+build/
+.DS_Store
+.env
+.env.*
+PLAN.md
+PUBLISH-STATUS.md

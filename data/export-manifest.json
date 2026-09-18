@@ -1,0 +1,18 @@
+{
+  "source_candidate_graph_sha256": "e34aea605eb2827960004e2a0560a94d303d73f562e8c9d658014b6fc8770c44",
+  "files": {
+    "data/graph.json": "287376ef9fb65a43179fe124d19fa46dcba436afe9be3913024fb2071b6154ed",
+    "data/sources.json": "73cdb3b7c7331355cc3ea42a662d8a1abf72e2a5592baf590d9318bd4cc5d6f6",
+    "data/graph.csv": "64131b6c978381895354277e020040748144dd1fbff74fe3ed58e71d5789eb49",
+    "data/ckg-openai-api-docs.md": "feae60c7f14a6c8a6253128dba4ea319a330e52ff978b23ed21976dbde723830",
+    "evals/baseline-graph.json": "1b0c7e0dd3be068885ade6f6c2390d1dc0235b4bc79073067be92367dc6f2c23",
+    "evals/questions.json": "49c22fcdd6224111ccf4cacff6f7037315639a754cc6bbd38f4192b396208b34",
+    "evals/answers.json": "5a98ac95b5f64e88f3e787d517bb8dc55e3e941620d783fa9669ae9517e9360f"
+  },
+  "excludes": [
+    "Full upstream source captures",
+    "Local filesystem locators",
+    "Private workspace and operational records"
+  ],
+  "limits": "Export integrity does not establish upstream byte provenance or semantic correctness."
+}
