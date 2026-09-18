@@ -1,0 +1,46 @@
+{
+  "graph_sha256": "287376ef9fb65a43179fe124d19fa46dcba436afe9be3913024fb2071b6154ed",
+  "relationships": [
+    {
+      "source": "ASTRA-TOOLS",
+      "relation": "REQUIRES",
+      "target": "RESPONSES-API",
+      "meaning": "Choose the API for tool calls.",
+      "source_url": "https://developers.openai.com/api/docs/guides/reasoning.md",
+      "target_url": "https://developers.openai.com/api/docs/guides/reasoning.md"
+    },
+    {
+      "source": "STEER-WS",
+      "relation": "REQUIRES",
+      "target": "RESPONSES-WS",
+      "meaning": "Choose the transport for live updates.",
+      "source_url": "https://developers.openai.com/api/docs/guides/steering.md",
+      "target_url": "https://developers.openai.com/api/docs/guides/steering.md"
+    },
+    {
+      "source": "ASYNC-ID",
+      "relation": "RELATES_TO",
+      "target": "OAI-065081c54a27",
+      "meaning": "Match results to the original call_id.",
+      "source_url": "https://developers.openai.com/api/docs/guides/async-tool-calling.md",
+      "target_url": "https://developers.openai.com/api/docs/guides/async-tool-calling.md"
+    },
+    {
+      "source": "REASON-UPDATE",
+      "relation": "RELATES_TO",
+      "target": "OAI-ec400e9e55dc",
+      "meaning": "Inspect configuration and compatibility.",
+      "source_url": "https://developers.openai.com/api/docs/guides/reasoning.md",
+      "target_url": "https://developers.openai.com/api/docs/guides/reasoning.md"
+    },
+    {
+      "source": "CACHE-COMPACT",
+      "relation": "RELATES_TO",
+      "target": "OAI-c86beef864f4",
+      "meaning": "Understand why prefix reuse can change.",
+      "source_url": "https://developers.openai.com/api/docs/guides/prompt-caching.md",
+      "target_url": "https://developers.openai.com/api/docs/guides/prompt-caching.md"
+    }
+  ],
+  "scope": "Static explanatory subset; no additional graph relationships inferred."
+}

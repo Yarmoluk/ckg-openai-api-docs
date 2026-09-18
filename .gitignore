@@ -7,4 +7,5 @@ build/
 .env
 .env.*
 PLAN.md
+PLAN-*.md
 PUBLISH-STATUS.md

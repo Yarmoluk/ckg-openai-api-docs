@@ -6,6 +6,10 @@
 
 **Source-linked context for agents building with OpenAI's APIs.** Search model constraints, tool contracts and request schemas, then follow each result back to the official documentation.
 
+![Astra as a reference point in a constellation of documentation](docs/assets/images/astra-documentation-header.png)
+
+**[Start with the Astra reference →](https://yarmoluk.github.io/ckg-openai-api-docs/astra.html)** Follow the model's documented connections to Responses, async tools, steering, reasoning and conversation state. The documentation includes a visual map generated from five exact graph relationships and a worked question-to-source example.
+
 This independent research preview organizes **541 indexed documentation entries into 2,889 nodes and 4,731 declared relationships**. It runs locally with Python's standard library: no API key, hosted service or embedding database.
 
 > Original HTTP response hashes are not yet verified. The retained parser captures have hashes, but those are a different form of evidence. The graph is not independently benchmarked or approved for production reliance.

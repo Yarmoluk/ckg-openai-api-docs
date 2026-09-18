@@ -28,6 +28,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - Overview: index.md
+  - Astra reference: astra.md
   - Architecture: architecture.md
   - Run it: quickstart.md
   - Evaluation: evaluation.md

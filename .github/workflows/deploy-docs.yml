@@ -19,6 +19,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/validate.py
+      - run: python scripts/build_reference_map.py --check
       - run: python scripts/evaluate.py
       - run: pip install -r requirements-docs.txt
       - uses: actions/configure-pages@v5
